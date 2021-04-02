@@ -101,11 +101,11 @@ class GinkgoConan(ConanFile):
 
         debug_suffix = "d" if self.settings.build_type == "Debug" else ""
 
-        self.cpp_info.components["_ginkgo"].names["cmake_find_package"] = "ginkgo"
-        self.cpp_info.components["_ginkgo"].names["cmake_find_package_multi"] = "ginkgo"
-        self.cpp_info.components["_ginkgo"].names["pkg_config"] = "ginkgo"
-        self.cpp_info.components["_ginkgo"].libs = ["ginkgo" + debug_suffix]
-        self.cpp_info.components["_ginkgo"].requires = [
+        self.cpp_info.components["ginkgo_core"].names["cmake_find_package"] = "ginkgo"
+        self.cpp_info.components["ginkgo_core"].names["cmake_find_package_multi"] = "ginkgo"
+        self.cpp_info.components["ginkgo_core"].names["pkg_config"] = "ginkgo"
+        self.cpp_info.components["ginkgo_core"].libs = ["ginkgo" + debug_suffix]
+        self.cpp_info.components["ginkgo_core"].requires = [
             "ginkgo_omp", "ginkgo_cuda", "ginkgo_reference", "ginkgo_hip"
         ]
 
